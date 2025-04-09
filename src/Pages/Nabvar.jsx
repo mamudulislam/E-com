@@ -3,12 +3,12 @@ import { FaUserCircle, FaShoppingCart, FaSearch, FaBars, FaTimes } from 'react-i
 import { IoIosArrowDown } from 'react-icons/io';
 
 const navItems = [
-    { label: 'ATTAR', subItems: ['1item', '2item', '3item', '4item'] },
-    { label: 'PANJABI', subItems: ['1item', '2item'] },
-    { label: 'T-SHIRT', subItems: [] },
-    { label: 'PANT & TROUSER', subItems: ['1item'] },
+    { label: 'ATTAR', subItems: ['1item', '2item', '3item', '4item', '5item', '6item'] },
+    { label: 'PANJABI', subItems: ['1item', '2item', '3item', '4item'] },
+    { label: 'T-SHIRT', subItems: ['1item', '2item'] },
+    { label: 'PANT & TROUSER', subItems: ['1item', '2item', '3item',] },
     { label: 'NATURAL FOODS', subItems: [] },
-    { label: "MEN'S CLOTHING", subItems: ['1item', '2item', '3item'] },
+    { label: "MEN'S CLOTHING", subItems: ['1item', '2item', '3item', '4item'] },
     { label: 'COMBO', subItems: [] },
 ];
 
