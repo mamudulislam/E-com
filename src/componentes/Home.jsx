@@ -106,6 +106,77 @@ const Home = () => {
         },
     ];
 
+    const T_shirt = [
+        {
+            name: 'Full Sleeve T-shirt - Musafir',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FuuaAt8WdWob1zG9K_oj.jpg&w=1080&q=75',
+            link: '/product/royal-sapphire-thameen-6ml-12vcor',
+        },
+        {
+            name: 'Full Sleeve T-shirt - Stay Focus',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2Fa7FeCWu6KEecjy-V-h6.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        }, {
+            name: 'Full Sleeve T-shirt - Never Give Up',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2Futg7mVVf5nWhaSilmXm.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        }, {
+            name: 'Full Sleeve Dawah Jersey - SJ15',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FktsgBf6QUjoFO-eqyyE.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        }, {
+            name: 'Full Sleeve Dawah Jersey - SJ16',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FktsgBf6QUjoFO-eqyyE.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        },
+    ];
+
+    const pant_trouser = [
+        {
+            name: 'Premium Ottoman Trouser - Ash',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2F7g33WOMCfxwHWk9qqZC.jpg&w=1080&q=75',
+            link: '/product/royal-sapphire-thameen-6ml-12vcor',
+        },
+        {
+            name: 'Mens Denim Pant - KF04',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FxK72STJbx1DebMKfiSZ.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        }, {
+            name: 'Mens Denim Pant - KF04',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FxK72STJbx1DebMKfiSZ.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        }, {
+            name: 'Full Sleeve Dawah Jersey - SJ15',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FktsgBf6QUjoFO-eqyyE.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        }, {
+            name: 'Full Sleeve Dawah Jersey - SJ16',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FktsgBf6QUjoFO-eqyyE.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        },
+    ];
+
+
 
     return (
         <>
@@ -148,16 +219,16 @@ const Home = () => {
             </div>
 
             {/* ATTAR_Product_Cards */}
-            <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4">
+            <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {attarProducts.map((product, index) => (
                     <ProductCard key={index} {...product} />
                 ))}
             </div>
             {/* panjabi__product */}
-            < div class="flex items-center px-6 py-4" >
-                <p class="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">panjabi</p>
-                <div class="flex-grow border-t border-gray-300 mx-4"></div>
-                <a class="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/panjabi">View All</a>
+            < div className="flex items-center px-6 py-4" >
+                <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">panjabi</p>
+                <div className="flex-grow border-t border-gray-300 mx-4"></div>
+                <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/panjabi">View All</a>
             </div >
             {/* panjabi__product */}
             <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -168,12 +239,41 @@ const Home = () => {
                 }
             </div>
             {/* t-shirt */}
-            < div class="flex items-center px-6 py-4" >
-                <p class="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">t-shirt</p>
-                <div class="flex-grow border-t border-gray-300 mx-4">
+            < div className="flex items-center px-6 py-4" >
+                <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">t-shirt</p>
+                <div className="flex-grow border-t border-gray-300 mx-4">
                 </div>
-                <a class="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/t-shirt">View All</a>
+                <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/t-shirt">View All</a>
             </div >
+            {/* t_shirt_product */}
+            <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {
+                    T_shirt.map((product, index) => (
+                        <ProductCard key={index} {...product} />
+                    ))
+                }
+            </div>
+            {/* pant & trouser */}
+            <div className="flex items-center px-6 py-4">
+                <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">pant &amp; trouser</p>
+                <div className="flex-grow border-t border-gray-300 mx-4">
+                </div>
+                <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/pant-trouser">View All</a>
+            </div >
+            {/* pant_trouser */}
+            <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {
+                    pant_trouser.map((product, index) => (
+                        <ProductCard key={index} {...product} />
+                    ))
+                }
+            </div>
+            {/* Natural_foods */}
+            <div className="flex items-center px-6 py-4">
+                <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">natural&nbsp;foods</p>
+                <div className="flex-grow border-t border-gray-300 mx-4"></div>
+                <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/natural-foods">View All</a>
+            </div>
         </>
     );
 };
