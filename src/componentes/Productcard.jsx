@@ -1,4 +1,3 @@
-// componentes/Productcard.jsx
 import React from 'react';
 
 const ProductCard = ({ name, price, discountedPrice, image, link }) => {
