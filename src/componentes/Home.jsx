@@ -71,6 +71,42 @@ const Home = () => {
         },
     ];
 
+    const panjabi__product = [
+        {
+            name: 'Fine Cotton Panjabi - 406',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2Fou1JjkxIW9Ysya6KZTj.jpg&w=1080&q=75',
+            link: '/product/royal-sapphire-thameen-6ml-12vcor',
+        },
+        {
+            name: 'Fine Cotton Panjabi - 405',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FFTwtMG3p1UcFt620Dcn.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        }, {
+            name: 'Fine Cotton Panjabi - 404',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FEh7pGX_7KwxFqnFQchp.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        }, {
+            name: 'Platinum China Bamboo - 904',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FpMd1rW7dkpN1kB0CAbA.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        }, {
+            name: 'Cotton Panjabi - 112',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2F3IMvVo_bX3RiSs5M6yw.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        },
+    ];
+
+
     return (
         <>
             {/* Banner */}
@@ -112,17 +148,32 @@ const Home = () => {
             </div>
 
             {/* ATTAR_Product_Cards */}
-            <div className="px-6 py-4 grid grid-cols-4 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-2 xls:grid-cols-2 xms:grid-cols-2 xs:grid-cols-2 gap-6 md:gap-4 sm:gap-2 xls:gap-2 xms:gap-2 xs:gap-2">
+            <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4">
                 {attarProducts.map((product, index) => (
                     <ProductCard key={index} {...product} />
                 ))}
             </div>
             {/* panjabi__product */}
-            <div class="flex items-center px-6 py-4">
+            < div class="flex items-center px-6 py-4" >
                 <p class="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">panjabi</p>
                 <div class="flex-grow border-t border-gray-300 mx-4"></div>
                 <a class="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/panjabi">View All</a>
+            </div >
+            {/* panjabi__product */}
+            <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {
+                    panjabi__product.map((product, index) => (
+                        <ProductCard key={index} {...product} />
+                    ))
+                }
             </div>
+            {/* t-shirt */}
+            < div class="flex items-center px-6 py-4" >
+                <p class="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">t-shirt</p>
+                <div class="flex-grow border-t border-gray-300 mx-4">
+                </div>
+                <a class="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/t-shirt">View All</a>
+            </div >
         </>
     );
 };
