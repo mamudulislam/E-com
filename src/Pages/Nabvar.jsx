@@ -12,26 +12,42 @@ const navItems = [
     {
         label: 'ATTAR',
         subItems: [
-            { label: '1item', path: '/attar/1' },
-            { label: '2item', path: '/attar/2' },
-            { label: '3item', path: '/attar/3' },
-            { label: '4item', path: '/attar/4' },
+            { label: 'Series 240 ', path: '/attar/1' },
+            { label: 'serious premium ', path: '/attar/2' },
+            { label: 'Atomizer', path: '/attar/3' },
+            { label: 'Perfumes', path: '/attar/4' },
+            { label: 'Combo', path: '/attar/4' },
+            { label: 'Wholesale', path: '/attar/4' },
         ],
     },
     {
         label: 'PANJABI',
         subItems: [
-            { label: '1item', path: '/panjabi/1' },
-            { label: '2item', path: '/panjabi/2' },
+            { label: 'Platinum', path: '/panjabi/1' },
+            { label: 'elegant', path: '/panjabi/2' },
+            { label: 'printed', path: '/panjabi/2' },
+            { label: 'chikankar', path: '/panjabi/2' },
         ],
     },
     {
         label: 'T-SHIRT',
-        subItems: [],
+        subItems: [{
+            label: 'Half Sleeve', path: '/pant/1'
+        }, {
+            label: 'Full Sleeve', path: '/pant/1'
+        }],
     },
     {
         label: 'PANT & TROUSER',
-        subItems: [{ label: '1item', path: '/pant/1' }],
+        subItems: [
+            {
+                label: 'pant', path: '/pant/1'
+            }, {
+                label: 'T-shirt', path: '/pant/1'
+            }, {
+                label: 'Pajama', path: '/pant/1'
+            }
+        ],
     },
     {
         label: 'NATURAL FOODS',
@@ -40,9 +56,10 @@ const navItems = [
     {
         label: "MEN'S CLOTHING",
         subItems: [
-            { label: '1item', path: '/mens/1' },
-            { label: '2item', path: '/mens/2' },
-            { label: '3item', path: '/mens/3' },
+            { label: 'Tupi', path: '/mens/1' },
+            { label: 'Thobe', path: '/mens/2' },
+            { label: 'sneakers', path: '/mens/3' },
+            { label: 'backpack', path: '/mens/3' },
         ],
     },
     {
