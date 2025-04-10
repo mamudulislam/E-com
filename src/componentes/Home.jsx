@@ -38,7 +38,7 @@ const Home = () => {
 
     const attarProducts = [
         {
-            name: 'Royal Sapphire Thameen - 6ml',
+            name: 'Royal Sapphire - 6ml',
             price: 550,
             discountedPrice: 440,
             image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FAvjgdoY-Bfu5Dir_BAf.jpg&w=1080&q=75',
