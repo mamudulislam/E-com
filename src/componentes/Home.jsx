@@ -274,7 +274,7 @@ const Home = () => {
                 <div className="flex-grow border-t border-gray-300 mx-4"></div>
                 <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/natural-foods">View All</a>
             </div>
-            <h2>green red piondhdmg jkjdudndu</h2>
+            <h2>green rdu</h2>
         </>
     );
 };
