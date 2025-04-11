@@ -176,7 +176,76 @@ const Home = () => {
         },
     ];
 
+    const Natural_foods = [
+        {
+            name: 'Summer Super Food Combo',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FmunLb1BgQlybT5XdXqg.jpg&w=1080&q=75',
+            link: '/product/royal-sapphire-thameen-6ml-12vcor',
+        },
+        {
+            name: 'Litchi Flower Honey - 2kg',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2F6MN0Au-Pm1sbxZ--2nS.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        }, {
+            name: 'Ajwa Premium - 1 kg',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FCQc1RY05QTEEa9oNW2p.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        }, {
+            name: 'Sufri Mariyam Premium - 1 kg',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FbspIwgF_HPtyKmu9XCe.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        }, {
+            name: 'Premium Dates Combo - 4 in 1',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FMi-dppX322WjXUI1rJX.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        },
+    ];
 
+
+    const showes_clothing = [
+        {
+            name: 'Y252015 White & Gray',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FF-VQ5av3bJANIFKkDZ8.jpg&w=1080&q=75',
+            link: '/product/royal-sapphire-thameen-6ml-12vcor',
+        },
+        {
+            name: 'Y251001 - White & Blue',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FLpHLWHJVrcdDtpjZt-r.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        }, {
+            name: 'Y-242015 White & Gray',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FkQ8fABySSVyPMZidCWa.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        }, {
+            name: 'Premium Exclusive- Gray & Green',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2F-QXY015VBzAh1YHodDS.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        }, {
+            name: 'Premium Blue & Yellow',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2F-QXY015VBzAh1YHodDS.jpg&w=1080&q=75',
+            link: '/product/red-african-6ml-f41ta8',
+        },
+    ];
 
     return (
         <>
@@ -186,7 +255,7 @@ const Home = () => {
             </div>
 
             {/* TOP__CATEGORIES */}
-            <div className="flex items-center justify-center w-full my-6">
+            <div className="flex items-center justify-center w-full my-6 px-6 py-4">
                 <div className="h-px bg-gray-300 flex-grow"></div>
                 <span className="mx-4 uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">
                     TOP CATEGORIES
@@ -273,6 +342,30 @@ const Home = () => {
                 <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">natural&nbsp;foods</p>
                 <div className="flex-grow border-t border-gray-300 mx-4"></div>
                 <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/natural-foods">View All</a>
+            </div>
+            {/* Natural_foods_add_product */}
+            <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {
+                    Natural_foods.map((product, index) => (
+                        <ProductCard key={index} {...product} />
+                    ))
+                }
+            </div>
+
+            {/* men's clothing */}
+            <div class="flex items-center px-6 py-4">
+                <p class="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">men's clothing</p>
+                <div class="flex-grow border-t border-gray-300 mx-4">
+                </div>
+                <a class="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/mens-clothing">View All</a>
+            </div>
+            {/* men's_showes_clothing__product */}
+            <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {
+                    showes_clothing.map((product, index) => (
+                        <ProductCard key={index} {...product} />
+                    ))
+                }
             </div>
         </>
     );
