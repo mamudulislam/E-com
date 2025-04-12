@@ -367,6 +367,7 @@ const Home = () => {
                     ))
                 }
             </div>
+            <h2>hi i am work in get github error</h2>
         </>
     );
 };
