@@ -31,22 +31,17 @@ const navItems = [
     },
     {
         label: 'T-SHIRT',
-        subItems: [{
-            label: 'Half Sleeve', path: '/pant/1'
-        }, {
-            label: 'Full Sleeve', path: '/pant/1'
-        }],
+        subItems: [
+            { label: 'Half Sleeve', path: '/pant/1' },
+            { label: 'Full Sleeve', path: '/pant/1' },
+        ],
     },
     {
         label: 'PANT & TROUSER',
         subItems: [
-            {
-                label: 'pant', path: '/pant/1'
-            }, {
-                label: 'T-shirt', path: '/pant/1'
-            }, {
-                label: 'Pajama', path: '/pant/1'
-            }
+            { label: 'pant', path: '/pant/1' },
+            { label: 'T-shirt', path: '/pant/1' },
+            { label: 'Pajama', path: '/pant/1' },
         ],
     },
     {
@@ -78,7 +73,6 @@ const Navbar = () => {
         setOpenDropdown(openDropdown === index ? null : index);
     };
 
-    // Prevent body scroll when menu is open
     useEffect(() => {
         document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
     }, [isMenuOpen]);
@@ -169,10 +163,23 @@ const Navbar = () => {
                                     onClick={() => handleDropdownToggle(i)}
                                 >
                                     <span>{item.label}</span>
-                                    {item.subItems.length > 0 && <IoIosArrowDown size={14} />}
+                                    {item.subItems.length > 0 && (
+                                        <IoIosArrowDown
+                                            size={14}
+                                            className={`transition-transform duration-300 ${openDropdown === i ? 'rotate-180' : ''
+                                                }`}
+                                        />
+                                    )}
                                 </div>
-                                {openDropdown === i && item.subItems.length > 0 && (
-                                    <div className="ml-4 mt-2 space-y-1 text-gray-700">
+
+                                {/* Smooth dropdown */}
+                                <div
+                                    className={`ml-4 transition-all duration-300 ease-in-out overflow-hidden ${openDropdown === i
+                                            ? 'max-h-96 opacity-100 mt-2'
+                                            : 'max-h-0 opacity-0'
+                                        }`}
+                                >
+                                    <div className="space-y-1 text-gray-700">
                                         {item.subItems.map((subItem, j) => (
                                             <a
                                                 key={j}
@@ -183,7 +190,7 @@ const Navbar = () => {
                                             </a>
                                         ))}
                                     </div>
-                                )}
+                                </div>
                             </div>
                         ))}
 
