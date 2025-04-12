@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import {
     FaUserCircle,
@@ -175,8 +176,8 @@ const Navbar = () => {
                                 {/* Smooth dropdown */}
                                 <div
                                     className={`ml-4 transition-all duration-300 ease-in-out overflow-hidden ${openDropdown === i
-                                            ? 'max-h-96 opacity-100 mt-2'
-                                            : 'max-h-0 opacity-0'
+                                        ? 'max-h-96 opacity-100 mt-2'
+                                        : 'max-h-0 opacity-0'
                                         }`}
                                 >
                                     <div className="space-y-1 text-gray-700">
