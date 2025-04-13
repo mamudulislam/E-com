@@ -13,36 +13,36 @@ const navItems = [
     {
         label: 'ATTAR',
         subItems: [
-            { label: 'Series 240 ', path: '/attar/1' },
-            { label: 'serious premium ', path: '/attar/2' },
-            { label: 'Atomizer', path: '/attar/3' },
-            { label: 'Perfumes', path: '/attar/4' },
-            { label: 'Combo', path: '/attar/4' },
-            { label: 'Wholesale', path: '/attar/4' },
+            { label: 'Series 240 ', path: '../Attar/Series240' },
+            { label: 'serious premium ', path: '../Attar/seriouspremium' },
+            { label: 'Atomizer', path: '../Attar/Atomizer' },
+            { label: 'Perfumes', path: '../Attar/Perfumes' },
+            { label: 'Combo', path: '../Attar/Combo' },
+            { label: 'Wholesale', path: '../Attar/Wholesale' },
         ],
     },
     {
         label: 'PANJABI',
         subItems: [
-            { label: 'Platinum', path: '/panjabi/1' },
-            { label: 'elegant', path: '/panjabi/2' },
-            { label: 'printed', path: '/panjabi/2' },
-            { label: 'chikankar', path: '/panjabi/2' },
+            { label: 'Platinum', path: '../panjabi/Platinum' },
+            { label: 'elegant', path: '../panjabi/elegant' },
+            { label: 'printed', path: '../panjabi/printed' },
+            { label: 'chikankar', path: '../panjabi/chikankar' },
         ],
     },
     {
         label: 'T-SHIRT',
         subItems: [
-            { label: 'Half Sleeve', path: '/pant/1' },
-            { label: 'Full Sleeve', path: '/pant/1' },
+            { label: 'Half Sleeve', path: '../T-SHIRT/HalfSleeve' },
+            { label: 'Full Sleeve', path: '../T-SHIRT/FullSleeve' },
         ],
     },
     {
         label: 'PANT & TROUSER',
         subItems: [
-            { label: 'pant', path: '/pant/1' },
-            { label: 'T-shirt', path: '/pant/1' },
-            { label: 'Pajama', path: '/pant/1' },
+            { label: 'pant', path: '../PANT-TROUSER/pant' },
+            { label: 'T-shirt', path: '../PANT-TROUSER/Tshirt' },
+            { label: 'Pajama', path: '../PANT-TROUSER/Pajama' },
         ],
     },
     {
@@ -52,10 +52,10 @@ const navItems = [
     {
         label: "MEN'S CLOTHING",
         subItems: [
-            { label: 'Tupi', path: '/mens/1' },
-            { label: 'Thobe', path: '/mens/2' },
-            { label: 'sneakers', path: '/mens/3' },
-            { label: 'backpack', path: '/mens/3' },
+            { label: 'Tupi', path: '../Menclothing/Tupi' },
+            { label: 'Thobe', path: '../Menclothing/Thobe' },
+            { label: 'sneakers', path: '../Menclothing/sneakers' },
+            { label: 'backpack', path: '../Menclothing/backpack' },
         ],
     },
     {
