@@ -367,7 +367,6 @@ const Home = () => {
                     ))
                 }
             </div>
-            <h2>helowww bd</h2>
         </>
     );
 };
