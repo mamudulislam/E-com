@@ -8,6 +8,7 @@ import {
     FaTimes,
 } from 'react-icons/fa';
 import { IoIosArrowDown } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 const navItems = [
     {
@@ -83,10 +84,9 @@ const Navbar = () => {
             <div className="container mx-auto">
                 {/* Top Bar */}
                 <div className="flex items-center justify-between px-6 py-4">
-                    <h1 className="text-xl font-semibold">
-                        BELIEVER’S SIGN<sup>®</sup>
+                    <h1 className="text-xl font-semibold cursor-pointer">
+                        <Link to="/">BELIEVER’S SIGN<sup>®</sup></Link>
                     </h1>
-
                     {/* Search */}
                     <div className="flex-1 max-w-2xl mx-6 hidden md:block">
                         <div className="flex border border-black rounded">
@@ -214,7 +214,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
