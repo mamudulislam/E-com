@@ -1,8 +1,30 @@
 import React from 'react'
-
+import ProductCard from '../componentes/Productcard'
 const Wholesale = () => {
+    const Wholesale = [
+        {
+            name: 'Royal Sapphire - 6ml',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FLPpWyM9cx1aPIerVpDE.jpg&w=1080&q=75',
+            link: '',
+        },
+        {
+            name: 'Red African - 6ml',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FLPpWyM9cx1aPIerVpDE.jpg&w=1080&q=75',
+            link: '',
+        }
+    ]
     return (
-        <div>Wholesale</div>
+        <div>
+            <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {Wholesale.map((product, index) => (
+                    <ProductCard key={index} {...product} />
+                ))}
+            </div>
+        </div>
     )
 }
 

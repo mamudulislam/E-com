@@ -1,8 +1,55 @@
 import React from 'react'
+import ProductCard from '../componentes/Productcard'
 
 const chikankar = () => {
+    const chikankar = [
+        {
+            name: 'Royal Sapphire - 6ml',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FfTIcnnd3CcKD6DpB_bB.jpg&w=1080&q=75',
+            link: '',
+        }, {
+            name: 'Royal Sapphire - 6ml',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FfTIcnnd3CcKD6DpB_bB.jpg&w=1080&q=75',
+            link: '',
+        }, {
+            name: 'Royal Sapphire - 6ml',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FfTIcnnd3CcKD6DpB_bB.jpg&w=1080&q=75',
+            link: '',
+        }, {
+            name: 'Royal Sapphire - 6ml',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FfTIcnnd3CcKD6DpB_bB.jpg&w=1080&q=75',
+            link: '',
+        }, {
+            name: 'Royal Sapphire - 6ml',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FfTIcnnd3CcKD6DpB_bB.jpg&w=1080&q=75',
+            link: '',
+        },
+        {
+            name: 'Red African - 6ml',
+            price: 550,
+            discountedPrice: 440,
+            image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FfTIcnnd3CcKD6DpB_bB.jpg&w=1080&q=75',
+            link: '',
+        }
+    ]
     return (
-        <div>chikankar</div>
+        <div>
+            <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {chikankar.map((product, index) => (
+                    <ProductCard key={index} {...product} />
+                ))}
+            </div>
+        </div>
     )
 }
 
