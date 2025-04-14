@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProductCard = ({ name, price, discountedPrice, image, link }) => {
+const ProductCard = ({ name, price, discountedPrice, badges, image, link }) => {
     return (
         <div>
             <div className="group relative border border-black rounded-t">
@@ -18,7 +18,7 @@ const ProductCard = ({ name, price, discountedPrice, image, link }) => {
                     </a>
                 </div>
                 <button className="absolute top-2 left-2 rounded-full bg-secondary text-white text-xs px-3 py-1 bg-black">
-                    20 %
+                    {badges}%
                 </button>
                 <div className="mt-3 p-2">
                     <p className="text-[#333] font-medium text-[15px] text-center">{name}</p>

@@ -6,30 +6,35 @@ const chikankar = () => {
         {
             name: 'Royal Sapphire - 6ml',
             price: 550,
+            badges: 30,
             discountedPrice: 440,
             image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FfTIcnnd3CcKD6DpB_bB.jpg&w=1080&q=75',
             link: '',
         }, {
             name: 'Royal Sapphire - 6ml',
             price: 550,
+            badges: 30,
             discountedPrice: 440,
             image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FfTIcnnd3CcKD6DpB_bB.jpg&w=1080&q=75',
             link: '',
         }, {
             name: 'Royal Sapphire - 6ml',
             price: 550,
+            badges: 30,
             discountedPrice: 440,
             image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FfTIcnnd3CcKD6DpB_bB.jpg&w=1080&q=75',
             link: '',
         }, {
             name: 'Royal Sapphire - 6ml',
             price: 550,
+            badges: 30,
             discountedPrice: 440,
             image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FfTIcnnd3CcKD6DpB_bB.jpg&w=1080&q=75',
             link: '',
         }, {
             name: 'Royal Sapphire - 6ml',
             price: 550,
+            badges: 30,
             discountedPrice: 440,
             image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FfTIcnnd3CcKD6DpB_bB.jpg&w=1080&q=75',
             link: '',
@@ -37,6 +42,7 @@ const chikankar = () => {
         {
             name: 'Red African - 6ml',
             price: 550,
+            badges: 30,
             discountedPrice: 440,
             image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FfTIcnnd3CcKD6DpB_bB.jpg&w=1080&q=75',
             link: '',

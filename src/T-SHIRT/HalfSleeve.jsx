@@ -7,10 +7,12 @@ const HalfSleeve = () => {
             name: 'Royal Sapphire - 6ml',
             price: 550,
             discountedPrice: 440,
+            badges: 30,
             image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FuuaAt8WdWob1zG9K_oj.jpg&w=1080&q=75',
             link: '',
         }, {
             name: 'Royal Sapphire - 6ml',
+            badges: 30,
             price: 550,
             discountedPrice: 440,
             image: 'https://www.believerssign.com.bd/_next/image?url=https%3A%2F%2Fapi.believerssign.com.bd%2Fpublic%2Fproduct%2FuuaAt8WdWob1zG9K_oj.jpg&w=1080&q=75',
