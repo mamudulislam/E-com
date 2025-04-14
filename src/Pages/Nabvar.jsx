@@ -8,8 +8,6 @@ import {
 } from 'react-icons/fa';
 import { IoIosArrowDown } from 'react-icons/io';
 import { Link } from 'react-router-dom';
-
-// ✅ Use absolute paths with forward slash
 const navItems = [
     {
         label: 'ATTAR',
