@@ -9,40 +9,41 @@ import {
 import { IoIosArrowDown } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
+// ✅ Use absolute paths with forward slash
 const navItems = [
     {
         label: 'ATTAR',
         subItems: [
-            { label: 'Series 240 ', path: '../Attar/Series240' },
-            { label: 'serious premium ', path: '../Attar/seriouspremium' },
-            { label: 'Atomizer', path: '../Attar/Atomizer' },
-            { label: 'Perfumes', path: '../Attar/Perfumes' },
-            { label: 'Combo', path: '../Attar/Combo' },
-            { label: 'Wholesale', path: '../Attar/Wholesale' },
+            { label: 'Series 240', path: '/Attar/Series240' },
+            { label: 'Serious Premium', path: '/Attar/seriouspremium' },
+            { label: 'Atomizer', path: '/Attar/Atomizer' },
+            { label: 'Perfumes', path: '/Attar/Perfumes' },
+            { label: 'Combo', path: '/Attar/Combo' },
+            { label: 'Wholesale', path: '/Attar/Wholesale' },
         ],
     },
     {
         label: 'PANJABI',
         subItems: [
-            { label: 'Platinum', path: '../panjabi/Platinum' },
-            { label: 'elegant', path: '../panjabi/elegant' },
-            { label: 'printed', path: '../panjabi/printed' },
-            { label: 'chikankar', path: '../panjabi/chikankar' },
+            { label: 'Platinum', path: '/panjabi/Platinum' },
+            { label: 'Elegant', path: '/panjabi/elegant' },
+            { label: 'Printed', path: '/panjabi/printed' },
+            { label: 'Chikankar', path: '/panjabi/chikankar' },
         ],
     },
     {
         label: 'T-SHIRT',
         subItems: [
-            { label: 'Half Sleeve', path: '../T-SHIRT/HalfSleeve' },
-            { label: 'Full Sleeve', path: '../T-SHIRT/FullSleeve' },
+            { label: 'Half Sleeve', path: '/T-SHIRT/HalfSleeve' },
+            { label: 'Full Sleeve', path: '/T-SHIRT/FullSleeve' },
         ],
     },
     {
         label: 'PANT & TROUSER',
         subItems: [
-            { label: 'pant', path: '../PANT-TROUSER/pant' },
-            { label: 'T-shirt', path: '../PANT-TROUSER/Tshirt' },
-            { label: 'Pajama', path: '../PANT-TROUSER/Pajama' },
+            { label: 'Pant', path: '/PANT-TROUSER/pant' },
+            { label: 'T-shirt', path: '/PANT-TROUSER/Tshirt' },
+            { label: 'Pajama', path: '/PANT-TROUSER/Pajama' },
         ],
     },
     {
@@ -52,10 +53,10 @@ const navItems = [
     {
         label: "MEN'S CLOTHING",
         subItems: [
-            { label: 'Tupi', path: '../Menclothing/Tupi' },
-            { label: 'Thobe', path: '../Menclothing/Thobe' },
-            { label: 'sneakers', path: '../Menclothing/sneakers' },
-            { label: 'backpack', path: '../Menclothing/backpack' },
+            { label: 'Tupi', path: '/Menclothing/Tupi' },
+            { label: 'Thobe', path: '/Menclothing/Thobe' },
+            { label: 'Sneakers', path: '/Menclothing/sneakers' },
+            { label: 'Backpack', path: '/Menclothing/backpack' },
         ],
     },
     {
@@ -69,7 +70,6 @@ const Navbar = () => {
     const [openDropdown, setOpenDropdown] = useState(null);
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
     const handleDropdownToggle = (index) => {
         setOpenDropdown(openDropdown === index ? null : index);
     };
@@ -86,7 +86,6 @@ const Navbar = () => {
                     <h1 className="text-xl font-semibold cursor-pointer">
                         <Link to="/">BELIEVER’S SIGN<sup>®</sup></Link>
                     </h1>
-                    {/* Search */}
                     <div className="flex-1 max-w-2xl mx-6 hidden md:block">
                         <div className="flex border border-black rounded">
                             <input
@@ -99,15 +98,11 @@ const Navbar = () => {
                             </button>
                         </div>
                     </div>
-
-                    {/* Icons */}
                     <div className="flex items-center gap-6 text-2xl">
                         <FaUserCircle />
                         <div className="relative">
                             <FaShoppingCart />
-                            <span className="absolute -top-2 -right-2 bg-black text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
-                                0
-                            </span>
+                            <span className="absolute -top-2 -right-2 bg-black text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">0</span>
                         </div>
                         <div className="md:hidden cursor-pointer" onClick={toggleMenu}>
                             <FaBars />
@@ -127,13 +122,13 @@ const Navbar = () => {
                                 {item.subItems.length > 0 && (
                                     <div className="absolute top-full left-0 w-44 bg-white text-black shadow-lg rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
                                         {item.subItems.map((subItem, j) => (
-                                            <a
+                                            <Link
                                                 key={j}
-                                                href={subItem.path}
+                                                to={subItem.path}
                                                 className="block px-4 py-2 hover:bg-gray-100 text-sm"
                                             >
                                                 {subItem.label}
-                                            </a>
+                                            </Link>
                                         ))}
                                     </div>
                                 )}
@@ -171,8 +166,6 @@ const Navbar = () => {
                                         />
                                     )}
                                 </div>
-
-                                {/* Smooth dropdown */}
                                 <div
                                     className={`ml-4 transition-all duration-300 ease-in-out overflow-hidden ${openDropdown === i
                                         ? 'max-h-96 opacity-100 mt-2'
@@ -181,13 +174,14 @@ const Navbar = () => {
                                 >
                                     <div className="space-y-1 text-gray-700">
                                         {item.subItems.map((subItem, j) => (
-                                            <a
+                                            <Link
                                                 key={j}
-                                                href={subItem.path}
+                                                to={subItem.path}
                                                 className="block text-sm hover:text-black"
+                                                onClick={toggleMenu}
                                             >
                                                 {subItem.label}
-                                            </a>
+                                            </Link>
                                         ))}
                                     </div>
                                 </div>
@@ -213,7 +207,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 
