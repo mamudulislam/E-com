@@ -7,7 +7,8 @@ import {
     FaTimes,
 } from 'react-icons/fa';
 import { IoIosArrowDown } from 'react-icons/io';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 const navItems = [
     {
         label: 'ATTAR',
@@ -47,6 +48,7 @@ const navItems = [
     {
         label: 'NATURAL FOODS',
         subItems: [],
+        path: '/NaturalFoods/NaturalFoods',
     },
     {
         label: "MEN'S CLOTHING",
@@ -54,20 +56,23 @@ const navItems = [
             { label: 'Tupi', path: '/Menclothing/Tupi' },
             { label: 'Thobe', path: '/Menclothing/Thobe' },
             { label: 'Sneakers', path: '/Menclothing/sneakers' },
-            { label: 'Backpack', path: '/Menclothing/backpack' },
+            { label: 'Backpack', path: '/Menclothing/Backpack' },
         ],
     },
     {
         label: 'COMBO',
         subItems: [],
+        path: '/Combo/Comboes',
     },
 ];
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null);
+    const navigate = useNavigate();
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
     const handleDropdownToggle = (index) => {
         setOpenDropdown(openDropdown === index ? null : index);
     };
@@ -112,11 +117,20 @@ const Navbar = () => {
                 <div className="hidden md:flex border-t">
                     <div className="flex items-center px-6 py-3 gap-6 text-sm font-medium">
                         {navItems.map((item, i) => (
-                            <div key={i} className="relative group cursor-pointer">
-                                <div className="flex items-center gap-1">
+                            <div key={i} className="relative group">
+                                {item.subItems.length > 0 ? (
+                                    <div className="flex items-center gap-1 cursor-pointer">
+                                        <span>{item.label}</span>
+                                        <IoIosArrowDown size={14} />
+                                    </div>
+                                ) : item.path ? (
+                                    <Link to={item.path} className="cursor-pointer hover:text-gray-700">
+                                        {item.label}
+                                    </Link>
+                                ) : (
                                     <span>{item.label}</span>
-                                    {item.subItems.length > 0 && <IoIosArrowDown size={14} />}
-                                </div>
+                                )}
+
                                 {item.subItems.length > 0 && (
                                     <div className="absolute top-full left-0 w-44 bg-white text-black shadow-lg rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
                                         {item.subItems.map((subItem, j) => (
@@ -153,7 +167,14 @@ const Navbar = () => {
                             <div key={i}>
                                 <div
                                     className="flex items-center justify-between cursor-pointer"
-                                    onClick={() => handleDropdownToggle(i)}
+                                    onClick={() => {
+                                        if (item.subItems.length > 0) {
+                                            handleDropdownToggle(i);
+                                        } else if (item.path) {
+                                            toggleMenu();
+                                            navigate(item.path);
+                                        }
+                                    }}
                                 >
                                     <span>{item.label}</span>
                                     {item.subItems.length > 0 && (
@@ -164,25 +185,27 @@ const Navbar = () => {
                                         />
                                     )}
                                 </div>
-                                <div
-                                    className={`ml-4 transition-all duration-300 ease-in-out overflow-hidden ${openDropdown === i
-                                        ? 'max-h-96 opacity-100 mt-2'
-                                        : 'max-h-0 opacity-0'
-                                        }`}
-                                >
-                                    <div className="space-y-1 text-gray-700">
-                                        {item.subItems.map((subItem, j) => (
-                                            <Link
-                                                key={j}
-                                                to={subItem.path}
-                                                className="block text-sm hover:text-black"
-                                                onClick={toggleMenu}
-                                            >
-                                                {subItem.label}
-                                            </Link>
-                                        ))}
+                                {item.subItems.length > 0 && (
+                                    <div
+                                        className={`ml-4 transition-all duration-300 ease-in-out overflow-hidden ${openDropdown === i
+                                            ? 'max-h-96 opacity-100 mt-2'
+                                            : 'max-h-0 opacity-0'
+                                            }`}
+                                    >
+                                        <div className="space-y-1 text-gray-700">
+                                            {item.subItems.map((subItem, j) => (
+                                                <Link
+                                                    key={j}
+                                                    to={subItem.path}
+                                                    className="block text-sm hover:text-black"
+                                                    onClick={toggleMenu}
+                                                >
+                                                    {subItem.label}
+                                                </Link>
+                                            ))}
+                                        </div>
                                     </div>
-                                </div>
+                                )}
                             </div>
                         ))}
 

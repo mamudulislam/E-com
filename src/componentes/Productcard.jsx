@@ -23,7 +23,7 @@ const ProductCard = ({ name, price, discountedPrice, badges, image, link }) => {
                 <div className="mt-3 p-2">
                     <p className="text-[#333] font-medium text-[15px] text-center">{name}</p>
                     <div className="flex items-center justify-center space-x-2 mt-2">
-                        <p className="text-sm line-through">{price}৳</p>
+                        <p className="text-sm line-through">{price}</p>
                         <p className="text-secondary font-bold text-sm">{discountedPrice}৳</p>
                     </div>
                 </div>
