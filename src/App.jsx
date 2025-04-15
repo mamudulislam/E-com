@@ -33,12 +33,14 @@ import NaturalFoods from './NaturalFoods/NaturalFoods'
 import Comboes from './Combo/Comboes'
 
 import NotFound from './NotFound/NotFound'
+import Breadcrumb from './Breadcrumb';
 
 
 const App = () => {
   return (
     <Router>
       <Navbar />
+      <Breadcrumb />
       <Routes>
         <Route path="/" element={<Home />} />
 

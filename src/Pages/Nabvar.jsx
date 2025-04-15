@@ -7,7 +7,7 @@ import {
     FaTimes,
 } from 'react-icons/fa';
 import { IoIosArrowDown } from 'react-icons/io';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const navItems = [
     {
@@ -69,7 +69,9 @@ const navItems = [
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null);
+    const [isSticky, setIsSticky] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -78,17 +80,30 @@ const Navbar = () => {
     };
 
     useEffect(() => {
+        const handleScroll = () => {
+            setIsSticky(window.scrollY > 0);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    useEffect(() => {
         document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
     }, [isMenuOpen]);
 
     return (
-        <div className="w-full border-b relative z-50">
+        <div
+            className={`w-full border-b z-50 transition-all duration-300 ${isSticky ? 'fixed top-0 bg-white shadow-md' : 'relative'
+                }`}
+        >
             <div className="container mx-auto">
                 {/* Top Bar */}
                 <div className="flex items-center justify-between px-6 py-4">
                     <h1 className="text-xl font-semibold cursor-pointer">
                         <Link to="/">BELIEVER’S SIGN<sup>®</sup></Link>
                     </h1>
+
+                    {/* Desktop Search */}
                     <div className="flex-1 max-w-2xl mx-6 hidden md:block">
                         <div className="flex border border-black rounded">
                             <input
@@ -101,11 +116,15 @@ const Navbar = () => {
                             </button>
                         </div>
                     </div>
+
+                    {/* Icons */}
                     <div className="flex items-center gap-6 text-2xl">
                         <FaUserCircle />
                         <div className="relative">
                             <FaShoppingCart />
-                            <span className="absolute -top-2 -right-2 bg-black text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">0</span>
+                            <span className="absolute -top-2 -right-2 bg-black text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                                0
+                            </span>
                         </div>
                         <div className="md:hidden cursor-pointer" onClick={toggleMenu}>
                             <FaBars />
@@ -116,36 +135,54 @@ const Navbar = () => {
                 {/* Desktop Menu */}
                 <div className="hidden md:flex border-t">
                     <div className="flex items-center px-6 py-3 gap-6 text-sm font-medium">
-                        {navItems.map((item, i) => (
-                            <div key={i} className="relative group">
-                                {item.subItems.length > 0 ? (
-                                    <div className="flex items-center gap-1 cursor-pointer">
-                                        <span>{item.label}</span>
-                                        <IoIosArrowDown size={14} />
-                                    </div>
-                                ) : item.path ? (
-                                    <Link to={item.path} className="cursor-pointer hover:text-gray-700">
-                                        {item.label}
-                                    </Link>
-                                ) : (
-                                    <span>{item.label}</span>
-                                )}
+                        {navItems.map((item, i) => {
+                            const isParentActive =
+                                item.subItems?.some((sub) => location.pathname === sub.path) ||
+                                location.pathname === item.path;
 
-                                {item.subItems.length > 0 && (
-                                    <div className="absolute top-full left-0 w-44 bg-white text-black shadow-lg rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
-                                        {item.subItems.map((subItem, j) => (
-                                            <Link
-                                                key={j}
-                                                to={subItem.path}
-                                                className="block px-4 py-2 hover:bg-gray-100 text-sm"
-                                            >
-                                                {subItem.label}
-                                            </Link>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-                        ))}
+                            return (
+                                <div key={i} className="relative group">
+                                    {item.subItems.length > 0 ? (
+                                        <div
+                                            className={`flex items-center gap-1 cursor-pointer ${isParentActive ? 'text-blue-600 font-semibold' : ''
+                                                }`}
+                                        >
+                                            <span>{item.label}</span>
+                                            <IoIosArrowDown size={14} />
+                                        </div>
+                                    ) : item.path ? (
+                                        <Link
+                                            to={item.path}
+                                            className={`cursor-pointer hover:text-gray-700 ${location.pathname === item.path
+                                                    ? 'text-blue-600 font-semibold'
+                                                    : ''
+                                                }`}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    ) : (
+                                        <span>{item.label}</span>
+                                    )}
+
+                                    {item.subItems.length > 0 && (
+                                        <div className="absolute top-full left-0 w-44 bg-white text-black shadow-lg rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
+                                            {item.subItems.map((subItem, j) => (
+                                                <Link
+                                                    key={j}
+                                                    to={subItem.path}
+                                                    className={`block px-4 py-2 hover:bg-gray-100 text-sm ${location.pathname === subItem.path
+                                                            ? 'text-blue-600 font-semibold'
+                                                            : ''
+                                                        }`}
+                                                >
+                                                    {subItem.label}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
 
@@ -176,7 +213,15 @@ const Navbar = () => {
                                         }
                                     }}
                                 >
-                                    <span>{item.label}</span>
+                                    <span
+                                        className={`${location.pathname === item.path ||
+                                                item.subItems?.some((sub) => location.pathname === sub.path)
+                                                ? 'text-blue-600 font-semibold'
+                                                : ''
+                                            }`}
+                                    >
+                                        {item.label}
+                                    </span>
                                     {item.subItems.length > 0 && (
                                         <IoIosArrowDown
                                             size={14}
@@ -188,8 +233,8 @@ const Navbar = () => {
                                 {item.subItems.length > 0 && (
                                     <div
                                         className={`ml-4 transition-all duration-300 ease-in-out overflow-hidden ${openDropdown === i
-                                            ? 'max-h-96 opacity-100 mt-2'
-                                            : 'max-h-0 opacity-0'
+                                                ? 'max-h-96 opacity-100 mt-2'
+                                                : 'max-h-0 opacity-0'
                                             }`}
                                     >
                                         <div className="space-y-1 text-gray-700">
@@ -197,7 +242,10 @@ const Navbar = () => {
                                                 <Link
                                                     key={j}
                                                     to={subItem.path}
-                                                    className="block text-sm hover:text-black"
+                                                    className={`block text-sm hover:text-black ${location.pathname === subItem.path
+                                                            ? 'text-blue-600 font-semibold'
+                                                            : ''
+                                                        }`}
                                                     onClick={toggleMenu}
                                                 >
                                                     {subItem.label}
