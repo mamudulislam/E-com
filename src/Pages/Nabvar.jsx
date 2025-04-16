@@ -70,11 +70,12 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null);
     const [isSticky, setIsSticky] = useState(false);
+    const [showLoginDropdown, setShowLoginDropdown] = useState(false);
+
     const navigate = useNavigate();
     const location = useLocation();
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
     const handleDropdownToggle = (index) => {
         setOpenDropdown(openDropdown === index ? null : index);
     };
@@ -91,11 +92,21 @@ const Navbar = () => {
         document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
     }, [isMenuOpen]);
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (!event.target.closest('.login-wrapper')) {
+                setShowLoginDropdown(false);
+            }
+        };
+        document.addEventListener('click', handleClickOutside);
+        return () => document.removeEventListener('click', handleClickOutside);
+    }, []);
+
     return (
         <div className={`w-full border-b z-50 transition-all duration-300 ${isSticky ? 'fixed top-0 bg-white shadow-md' : 'relative'}`}>
-            <div className="container mx-auto">
+            <div className="container mx-auto px-4 sm:px-6">
                 {/* Top Bar */}
-                <div className="flex items-center justify-between px-6 py-4">
+                <div className="flex items-center justify-between py-4">
                     <h1 className="text-xl font-semibold cursor-pointer">
                         <Link to="/">BELIEVER’S SIGN<sup>®</sup></Link>
                     </h1>
@@ -116,10 +127,16 @@ const Navbar = () => {
 
                     {/* Icons */}
                     <div className="flex items-center gap-6 text-2xl relative">
-                        {/* Account icon with dropdown login */}
-                        <div className="relative group">
+                        {/* Account Icon */}
+                        <div className="relative login-wrapper group md:static" onClick={() => setShowLoginDropdown(!showLoginDropdown)}>
                             <FaUserCircle className="cursor-pointer text-2xl" />
-                            <div className="absolute right-0 top-8 w-80 bg-white border border-gray-200 shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <div
+                                className={`
+                                    absolute right-0 top-8 w-[90vw] max-w-xs sm:max-w-sm bg-white border border-gray-200 shadow-lg rounded-lg z-50 transition-all duration-300
+                                    ${showLoginDropdown ? 'opacity-100 visible' : 'opacity-0 invisible'}
+                                    md:group-hover:opacity-100 md:group-hover:visible
+                                `}
+                            >
                                 <div className="p-4">
                                     <div className="flex justify-between items-center mb-4">
                                         <h2 className="text-lg font-semibold">Sign in</h2>
@@ -174,13 +191,15 @@ const Navbar = () => {
                                 0
                             </span>
                         </div>
+
+                        {/* Mobile Menu Toggle */}
                         <div className="md:hidden cursor-pointer" onClick={toggleMenu}>
                             <FaBars />
                         </div>
                     </div>
                 </div>
 
-                {/* Desktop Menu */}
+                {/* Desktop Navigation */}
                 <div className="hidden md:flex border-t">
                     <div className="flex items-center px-6 py-3 gap-6 text-sm font-medium">
                         {navItems.map((item, i) => {
@@ -191,21 +210,17 @@ const Navbar = () => {
                             return (
                                 <div key={i} className="relative group">
                                     {item.subItems.length > 0 ? (
-                                        <div
-                                            className={`flex items-center gap-1 cursor-pointer ${isParentActive ? 'text-blue-600 font-semibold' : ''}`}
-                                        >
+                                        <div className={`flex items-center gap-1 cursor-pointer ${isParentActive ? 'text-blue-600 font-semibold' : ''}`}>
                                             <span>{item.label}</span>
                                             <IoIosArrowDown size={14} />
                                         </div>
-                                    ) : item.path ? (
+                                    ) : (
                                         <Link
                                             to={item.path}
                                             className={`cursor-pointer hover:text-gray-700 ${location.pathname === item.path ? 'text-blue-600 font-semibold' : ''}`}
                                         >
                                             {item.label}
                                         </Link>
-                                    ) : (
-                                        <span>{item.label}</span>
                                     )}
 
                                     {item.subItems.length > 0 && (
@@ -232,7 +247,7 @@ const Navbar = () => {
                     <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={toggleMenu} />
                 )}
 
-                {/* Mobile Slide-In Menu */}
+                {/* Mobile Slide Menu */}
                 <div className={`fixed top-0 right-0 w-3/4 h-full bg-white z-50 shadow-lg transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden overflow-y-auto`}>
                     <div className="px-6 py-6 space-y-4">
                         {navItems.map((item, i) => (
