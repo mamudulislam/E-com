@@ -154,8 +154,8 @@ const Navbar = () => {
                                         <Link
                                             to={item.path}
                                             className={`cursor-pointer hover:text-gray-700 ${location.pathname === item.path
-                                                    ? 'text-blue-600 font-semibold'
-                                                    : ''
+                                                ? 'text-blue-600 font-semibold'
+                                                : ''
                                                 }`}
                                         >
                                             {item.label}
@@ -171,8 +171,8 @@ const Navbar = () => {
                                                     key={j}
                                                     to={subItem.path}
                                                     className={`block px-4 py-2 hover:bg-gray-100 text-sm ${location.pathname === subItem.path
-                                                            ? 'text-blue-600 font-semibold'
-                                                            : ''
+                                                        ? 'text-blue-600 font-semibold'
+                                                        : ''
                                                         }`}
                                                 >
                                                     {subItem.label}
@@ -215,9 +215,9 @@ const Navbar = () => {
                                 >
                                     <span
                                         className={`${location.pathname === item.path ||
-                                                item.subItems?.some((sub) => location.pathname === sub.path)
-                                                ? 'text-blue-600 font-semibold'
-                                                : ''
+                                            item.subItems?.some((sub) => location.pathname === sub.path)
+                                            ? 'text-blue-600 font-semibold'
+                                            : ''
                                             }`}
                                     >
                                         {item.label}
@@ -233,8 +233,8 @@ const Navbar = () => {
                                 {item.subItems.length > 0 && (
                                     <div
                                         className={`ml-4 transition-all duration-300 ease-in-out overflow-hidden ${openDropdown === i
-                                                ? 'max-h-96 opacity-100 mt-2'
-                                                : 'max-h-0 opacity-0'
+                                            ? 'max-h-96 opacity-100 mt-2'
+                                            : 'max-h-0 opacity-0'
                                             }`}
                                     >
                                         <div className="space-y-1 text-gray-700">
@@ -243,8 +243,8 @@ const Navbar = () => {
                                                     key={j}
                                                     to={subItem.path}
                                                     className={`block text-sm hover:text-black ${location.pathname === subItem.path
-                                                            ? 'text-blue-600 font-semibold'
-                                                            : ''
+                                                        ? 'text-blue-600 font-semibold'
+                                                        : ''
                                                         }`}
                                                     onClick={toggleMenu}
                                                 >
