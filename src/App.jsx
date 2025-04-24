@@ -34,6 +34,7 @@ import Comboes from './Combo/Comboes'
 
 import NotFound from './NotFound/NotFound'
 import Breadcrumb from './Breadcrumb';
+import Register from './componentes/register';
 
 
 const App = () => {
@@ -71,6 +72,7 @@ const App = () => {
         <Route path="/NaturalFoods/NaturalFoods" element={<NaturalFoods />} />
         <Route path="/Combo/Comboes" element={<Comboes />} />
 
+        <Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

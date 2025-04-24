@@ -140,7 +140,7 @@ const Navbar = () => {
                                 <div className="p-4">
                                     <div className="flex justify-between items-center mb-4">
                                         <h2 className="text-lg font-semibold">Sign in</h2>
-                                        <Link to="/register" className="text-sm text-black hover:underline">
+                                        <Link to="/Register" className="text-sm text-black hover:underline">
                                             Create an Account
                                         </Link>
                                     </div>
