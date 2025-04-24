@@ -53,7 +53,6 @@ const Footer = () => {
             {/* Bottom Bar */}
             <div className="border-t border-gray-800 text-center py-4 text-xs">
                 BELIEVERS SIGN © 2026 POWERED BY{' '}
-                <span className="text-teal-400 font-semibold">STOREX</span>
             </div>
         </footer>
     );
