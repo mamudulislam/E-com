@@ -8,6 +8,7 @@ import {
 } from 'react-icons/fa';
 import { IoIosArrowDown } from 'react-icons/io';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux'; // Add this import
 
 const navItems = [
     {
@@ -72,6 +73,9 @@ const Navbar = () => {
     const [isSticky, setIsSticky] = useState(false);
     const [showLoginDropdown, setShowLoginDropdown] = useState(false);
 
+    // Get cart total quantity from Redux store
+    const cartTotalQuantity = useSelector(state => state.cart.totalQuantity);
+
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -108,7 +112,7 @@ const Navbar = () => {
                 {/* Top Bar */}
                 <div className="flex items-center justify-between py-4">
                     <h1 className="text-xl font-semibold cursor-pointer">
-                        <Link to="/">BELIEVER’S SIGN<sup>®</sup></Link>
+                        <Link to="/">BELIEVER'S SIGN<sup>®</sup></Link>
                     </h1>
 
                     {/* Desktop Search */}
@@ -184,12 +188,16 @@ const Navbar = () => {
                             </div>
                         </div>
 
-                        {/* Cart Icon */}
+                        {/* Cart Icon - Updated with Redux */}
                         <div className="relative">
-                            <FaShoppingCart />
-                            <span className="absolute -top-2 -right-2 bg-black text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
-                                0
-                            </span>
+                            <Link to="/cart">
+                                <FaShoppingCart />
+                                {cartTotalQuantity > 0 && (
+                                    <span className="absolute -top-2 -right-2 bg-black text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                                        {cartTotalQuantity}
+                                    </span>
+                                )}
+                            </Link>
                         </div>
 
                         {/* Mobile Menu Toggle */}

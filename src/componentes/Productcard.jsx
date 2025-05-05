@@ -1,6 +1,18 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { addItemToCart } from '../Store/cartSlice';
 
 const ProductCard = ({ name, price, discountedPrice, badges, image, link }) => {
+    const dispatch = useDispatch();
+
+    const handleAddToCart = () => {
+        dispatch(addItemToCart({
+            name,
+            discountedPrice,
+            image
+        }));
+    };
+
     return (
         <div>
             <div className="group relative border border-black rounded-t">
@@ -28,8 +40,11 @@ const ProductCard = ({ name, price, discountedPrice, badges, image, link }) => {
                     </div>
                 </div>
                 <div className="w-full flex justify-between space-x-2">
-                    <button className="bg-secondary text-white w-full py-2 text-sm capitalize font-semibold bg-black">
-                        Buy Now
+                    <button
+                        className="bg-secondary text-white w-full py-2 text-sm capitalize font-semibold bg-black"
+                        onClick={handleAddToCart}
+                    >
+                        Add to Cart
                     </button>
                 </div>
             </div>

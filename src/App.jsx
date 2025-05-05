@@ -35,6 +35,7 @@ import Comboes from './Combo/Comboes'
 import NotFound from './NotFound/NotFound'
 import Breadcrumb from './Breadcrumb';
 import Register from './componentes/register';
+import Cart from './Store/Cart';
 
 
 const App = () => {
@@ -74,6 +75,8 @@ const App = () => {
 
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />
+        {/* cart */}
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer />
     </Router>
