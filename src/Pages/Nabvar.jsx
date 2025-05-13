@@ -132,62 +132,10 @@ const Navbar = () => {
                     {/* Icons */}
                     <div className="flex items-center gap-6 text-2xl relative">
                         {/* Account Icon */}
-                        <div className="relative login-wrapper group md:static" onClick={() => setShowLoginDropdown(!showLoginDropdown)}>
+                        {/* User Icon Only */}
+                        <Link to="/login">
                             <FaUserCircle className="cursor-pointer text-2xl" />
-                            <div
-                                className={`
-                                    absolute right-0 top-8 w-[90vw] max-w-xs sm:max-w-sm bg-white border border-gray-200 shadow-lg rounded-lg z-50 transition-all duration-300
-                                    ${showLoginDropdown ? 'opacity-100 visible' : 'opacity-0 invisible'}
-                                    md:group-hover:opacity-100 md:group-hover:visible
-                                `}
-                            >
-                                <div className="p-4">
-                                    <div className="flex justify-between items-center mb-4">
-                                        <h2 className="text-lg font-semibold">Sign in</h2>
-                                        <Link to="/Register" className="text-sm text-black hover:underline">
-                                            Create an Account
-                                        </Link>
-                                    </div>
-                                    <form className="space-y-4">
-                                        <div>
-                                            <label className="block text-sm font-medium mb-1">
-                                                Username or email address <span className="text-red-500">*</span>
-                                            </label>
-                                            <input
-                                                type="email"
-                                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-orange-400"
-                                            />
-                                        </div>
-                                        <div className="relative">
-                                            <label className="block text-sm font-medium mb-1">
-                                                Password <span className="text-red-500">*</span>
-                                            </label>
-                                            <input
-                                                type="password"
-                                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-orange-400"
-                                            />
-                                            <span className="absolute right-3 top-9 text-gray-500 cursor-pointer">👁️</span>
-                                        </div>
-                                        <button
-                                            type="submit"
-                                            className="w-full bg-black text-white py-2 font-semibold rounded-md hover:bg-gray-700 transition"
-                                        >
-                                            LOG IN
-                                        </button>
-                                        <div className="flex items-center justify-between text-sm mt-2">
-                                            <label className="flex items-center space-x-2">
-                                                <input type="checkbox" />
-                                                <span>Remember me</span>
-                                            </label>
-                                            <Link to="/forgot-password" className="text-black">
-                                                Lost your password?
-                                            </Link>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
+                        </Link>
                         {/* Cart Icon - Updated with Redux */}
                         <div className="relative">
                             <Link to="/cart">
@@ -252,7 +200,7 @@ const Navbar = () => {
 
                 {/* Mobile Overlay */}
                 {isMenuOpen && (
-                    <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={toggleMenu} />
+                    <div className="fixed inset-0 bg-white bg-opacity-50 z-40" onClick={toggleMenu} />
                 )}
 
                 {/* Mobile Slide Menu */}

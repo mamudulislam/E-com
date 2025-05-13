@@ -36,6 +36,7 @@ import NotFound from './NotFound/NotFound'
 import Breadcrumb from './Breadcrumb';
 import Register from './componentes/register';
 import Cart from './Store/Cart';
+import Login from './componentes/Login';
 
 
 const App = () => {
@@ -72,8 +73,10 @@ const App = () => {
 
         <Route path="/NaturalFoods/NaturalFoods" element={<NaturalFoods />} />
         <Route path="/Combo/Comboes" element={<Comboes />} />
-
-        <Route path="/register" element={<Register />} />
+        {/* login */}
+        <Route path="/Login" element={<Login />} />
+        {/* login */}
+        < Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />
         {/* cart */}
         <Route path="/cart" element={<Cart />} />
