@@ -200,7 +200,7 @@ const Navbar = () => {
 
                 {/* Mobile Overlay */}
                 {isMenuOpen && (
-                    <div className="fixed inset-0 bg-white bg-opacity-50 z-40" onClick={toggleMenu} />
+                    <div className="fixed bg-white bg-opacity-50 " onClick={toggleMenu} />
                 )}
 
                 {/* Mobile Slide Menu */}
