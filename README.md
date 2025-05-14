@@ -11,6 +11,7 @@ This is a modern and responsive e-commerce web application built with **React** 
 - 🎨 Responsive design for all devices
 
 <h1>Front-end</h1> 
+
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
 - [React Router](https://reactrouter.com/) for routing
