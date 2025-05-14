@@ -5,7 +5,7 @@ This is a modern front-end project using [React](https://reactjs.org/) with [Vit
 ## 🚀 Features
 
 - ⚡️ Fast development with Vite
-- ⚛️ React 18 with JSX
+- ⚛️ React 19 with JSX
 - 📦 Optimized production build
 - 🎨 CSS Modules / Tailwind / Sass (optional)
 - 🔎 ESLint + Prettier (optional)
