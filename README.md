@@ -17,5 +17,3 @@ This is a modern and responsive e-commerce web application built with **React** 
 - [React Router](https://reactrouter.com/) for routing
 - [Redux](https://redux.js.org/) for state management
 - [Tailwind CSS](https://tailwindcss.com/) or CSS Modules for styling
-## 📁 Project Structure
-
