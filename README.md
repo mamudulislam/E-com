@@ -2,7 +2,7 @@
 
 This is a modern and responsive e-commerce web application built with **React** and powered by **Vite** for lightning-fast development and optimized builds.
 
-## 🚀 Features
+<h1>Features</h1>
 
 - 🛍 Product listings and details
 - 🔍 Product search and filtering
@@ -19,6 +19,5 @@ This is a modern and responsive e-commerce web application built with **React** 
 - [React Router](https://reactrouter.com/) for routing
 - [Redux](https://redux.js.org/) for state management
 - [Tailwind CSS](https://tailwindcss.com/) or CSS Modules for styling
-- It's just front-end 
 ## 📁 Project Structure
 
