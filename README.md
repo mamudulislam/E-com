@@ -17,10 +17,8 @@ This is a modern and responsive e-commerce web application built with **React** 
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
 - [React Router](https://reactrouter.com/) for routing
-- [Context API](https://reactjs.org/docs/context.html) or [Redux](https://redux.js.org/) for state management
-- [Axios](https://axios-http.com/) or Fetch API for HTTP requests
+- [Redux](https://redux.js.org/) for state management
 - [Tailwind CSS](https://tailwindcss.com/) or CSS Modules for styling
-- (Optional) Stripe / PayPal SDK for payments
-
+- It's just front-end 
 ## 📁 Project Structure
 
