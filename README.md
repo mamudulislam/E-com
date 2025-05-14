@@ -5,15 +5,12 @@ This is a modern and responsive e-commerce web application built with **React** 
 <h1>Features</h1>
 
 - 🛍 Product listings and details
-- 🔍 Product search and filtering
 - 🛒 Shopping cart functionality
-- 👤 User authentication (login/register)
-- 💳 Checkout system (with payment integration placeholder)
-- 📦 Order summary and confirmation
+- 👤 (login/register)
+- 📦 Order summary
 - 🎨 Responsive design for all devices
 
-## 🧱 Tech Stack
-
+<h1>Front-end</h1> 
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
 - [React Router](https://reactrouter.com/) for routing
