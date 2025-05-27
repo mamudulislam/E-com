@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductCard from '../componentes/Productcard'
+import { Helmet } from 'react-helmet-async'
 const Wholesale = () => {
     const Wholesale = [
         {
@@ -21,6 +22,9 @@ const Wholesale = () => {
     ]
     return (
         <div>
+            <Helmet>
+                <title>Wholesale</title>
+            </Helmet>
             <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {Wholesale.map((product, index) => (
                     <ProductCard key={index} {...product} />

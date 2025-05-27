@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from '../assets/Banner.png';
 import ProductCard from '../componentes/Productcard';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
     const categories = [
@@ -280,6 +281,9 @@ const Home = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Home</title>
+            </Helmet>
             {/* Banner */}
             <div className="mt-[22px] mb-[30px]">
                 <img src={Banner} alt="Banner..." className="w-full h-auto max-w-full object-cover" />

@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductCard from '../componentes/Productcard'
+import { Helmet } from 'react-helmet-async'
 
 const chikankar = () => {
     const chikankar = [
@@ -50,6 +51,9 @@ const chikankar = () => {
     ]
     return (
         <div>
+            <Helmet>
+                <title>chikankar</title>
+            </Helmet>
             <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {chikankar.map((product, index) => (
                     <ProductCard key={index} {...product} />
