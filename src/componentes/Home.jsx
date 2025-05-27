@@ -2,6 +2,8 @@ import React from 'react';
 import Banner from '../assets/Banner.png';
 import ProductCard from '../componentes/Productcard';
 import { Helmet } from 'react-helmet-async';
+import Containear from '../golobalcomponentes/Containear';
+import Container from '../golobalcomponentes/Containear';
 
 const Home = () => {
     const categories = [
@@ -284,124 +286,126 @@ const Home = () => {
             <Helmet>
                 <title>Home</title>
             </Helmet>
-            {/* Banner */}
-            <div className="mt-[22px] mb-[30px]">
-                <img src={Banner} alt="Banner..." className="w-full h-auto max-w-full object-cover" />
-            </div>
+            <Container>
+                {/* Banner */}
+                <div className="mt-[22px] mb-[30px]">
+                    <img src={Banner} alt="Banner..." className="w-full h-auto max-w-full object-cover" />
+                </div>
 
-            {/* TOP__CATEGORIES */}
-            <div className="flex items-center justify-center w-full my-6 px-6 py-4">
-                <div className="h-px bg-gray-300 flex-grow"></div>
-                <span className="mx-4 uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">
-                    TOP CATEGORIES
-                </span>
-                <div className="h-px bg-gray-300 flex-grow"></div>
-            </div>
+                {/* TOP__CATEGORIES */}
+                <div className="flex items-center justify-center w-full my-6 px-6 py-4">
+                    <div className="h-px bg-gray-300 flex-grow"></div>
+                    <span className="mx-4 uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">
+                        TOP CATEGORIES
+                    </span>
+                    <div className="h-px bg-gray-300 flex-grow"></div>
+                </div>
 
-            {/* Category__Cards */}
-            <div className="flex flex-wrap justify-center gap-4 p-4">
-                {categories.map((category) => (
-                    <div key={category.id} className="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img src={category.imgSrc} alt={category.altText} className="w-full h-48 object-cover" />
-                        <div className="p-4 text-center">
-                            <h3 className="text-lg font-semibold">{category.altText}</h3>
+                {/* Category__Cards */}
+                <div className="flex flex-wrap justify-center gap-4 p-4">
+                    {categories.map((category) => (
+                        <div key={category.id} className="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden">
+                            <img src={category.imgSrc} alt={category.altText} className="w-full h-48 object-cover" />
+                            <div className="p-4 text-center">
+                                <h3 className="text-lg font-semibold">{category.altText}</h3>
+                            </div>
                         </div>
+                    ))}
+                </div>
+
+                {/* ATTAR__ */}
+                <div className="flex items-center px-6 py-4">
+                    <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">attar</p>
+                    <div className="flex-grow border-t border-gray-300 mx-4"></div>
+                    <a
+                        className="px-4 py-2 text-white text-sm bg-black rounded-full"
+                        href="/category/attar"
+                    >
+                        View All
+                    </a>
+                </div>
+
+                {/* ATTAR_Product_Cards */}
+                <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {attarProducts.map((product, index) => (
+                        <ProductCard key={index} {...product} />
+                    ))}
+                </div>
+                {/* panjabi__product */}
+                < div className="flex items-center px-6 py-4" >
+                    <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">panjabi</p>
+                    <div className="flex-grow border-t border-gray-300 mx-4"></div>
+                    <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/panjabi">View All</a>
+                </div >
+                {/* panjabi__product */}
+                <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {
+                        panjabi__product.map((product, index) => (
+                            <ProductCard key={index} {...product} />
+                        ))
+                    }
+                </div>
+                {/* t-shirt */}
+                < div className="flex items-center px-6 py-4" >
+                    <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">t-shirt</p>
+                    <div className="flex-grow border-t border-gray-300 mx-4">
                     </div>
-                ))}
-            </div>
-
-            {/* ATTAR__ */}
-            <div className="flex items-center px-6 py-4">
-                <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">attar</p>
-                <div className="flex-grow border-t border-gray-300 mx-4"></div>
-                <a
-                    className="px-4 py-2 text-white text-sm bg-black rounded-full"
-                    href="/category/attar"
-                >
-                    View All
-                </a>
-            </div>
-
-            {/* ATTAR_Product_Cards */}
-            <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {attarProducts.map((product, index) => (
-                    <ProductCard key={index} {...product} />
-                ))}
-            </div>
-            {/* panjabi__product */}
-            < div className="flex items-center px-6 py-4" >
-                <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">panjabi</p>
-                <div className="flex-grow border-t border-gray-300 mx-4"></div>
-                <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/panjabi">View All</a>
-            </div >
-            {/* panjabi__product */}
-            <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {
-                    panjabi__product.map((product, index) => (
-                        <ProductCard key={index} {...product} />
-                    ))
-                }
-            </div>
-            {/* t-shirt */}
-            < div className="flex items-center px-6 py-4" >
-                <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">t-shirt</p>
-                <div className="flex-grow border-t border-gray-300 mx-4">
+                    <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/t-shirt">View All</a>
+                </div >
+                {/* t_shirt_product */}
+                <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {
+                        T_shirt.map((product, index) => (
+                            <ProductCard key={index} {...product} />
+                        ))
+                    }
                 </div>
-                <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/t-shirt">View All</a>
-            </div >
-            {/* t_shirt_product */}
-            <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {
-                    T_shirt.map((product, index) => (
-                        <ProductCard key={index} {...product} />
-                    ))
-                }
-            </div>
-            {/* pant & trouser */}
-            <div className="flex items-center px-6 py-4">
-                <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">pant &amp; trouser</p>
-                <div className="flex-grow border-t border-gray-300 mx-4">
+                {/* pant & trouser */}
+                <div className="flex items-center px-6 py-4">
+                    <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">pant &amp; trouser</p>
+                    <div className="flex-grow border-t border-gray-300 mx-4">
+                    </div>
+                    <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/pant-trouser">View All</a>
+                </div >
+                {/* pant_trouser */}
+                <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {
+                        pant_trouser.map((product, index) => (
+                            <ProductCard key={index} {...product} />
+                        ))
+                    }
                 </div>
-                <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/pant-trouser">View All</a>
-            </div >
-            {/* pant_trouser */}
-            <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {
-                    pant_trouser.map((product, index) => (
-                        <ProductCard key={index} {...product} />
-                    ))
-                }
-            </div>
-            {/* Natural_foods */}
-            <div className="flex items-center px-6 py-4">
-                <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">natural&nbsp;foods</p>
-                <div className="flex-grow border-t border-gray-300 mx-4"></div>
-                <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/natural-foods">View All</a>
-            </div>
-            {/* Natural_foods_add_product */}
-            <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {
-                    Natural_foods.map((product, index) => (
-                        <ProductCard key={index} {...product} />
-                    ))
-                }
-            </div>
+                {/* Natural_foods */}
+                <div className="flex items-center px-6 py-4">
+                    <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">natural&nbsp;foods</p>
+                    <div className="flex-grow border-t border-gray-300 mx-4"></div>
+                    <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/natural-foods">View All</a>
+                </div>
+                {/* Natural_foods_add_product */}
+                <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {
+                        Natural_foods.map((product, index) => (
+                            <ProductCard key={index} {...product} />
+                        ))
+                    }
+                </div>
 
-            {/* men's clothing */}
-            <div class="flex items-center px-6 py-4">
-                <p class="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">men's clothing</p>
-                <div class="flex-grow border-t border-gray-300 mx-4">
+                {/* men's clothing */}
+                <div class="flex items-center px-6 py-4">
+                    <p class="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">men's clothing</p>
+                    <div class="flex-grow border-t border-gray-300 mx-4">
+                    </div>
+                    <a class="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/mens-clothing">View All</a>
                 </div>
-                <a class="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/mens-clothing">View All</a>
-            </div>
-            {/* men's_showes_clothing__product */}
-            <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {
-                    showes_clothing.map((product, index) => (
-                        <ProductCard key={index} {...product} />
-                    ))
-                }
-            </div>
+                {/* men's_showes_clothing__product */}
+                <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {
+                        showes_clothing.map((product, index) => (
+                            <ProductCard key={index} {...product} />
+                        ))
+                    }
+                </div>
+            </Container >
         </>
     );
 };
