@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductCard from '../componentes/Productcard'
 import { Helmet } from 'react-helmet-async'
+import Container from '../golobalcomponentes/Containear'
 
 const Atomizer = () => {
     const Atomizer = [
@@ -180,11 +181,13 @@ const Atomizer = () => {
             <Helmet>
                 <title>Atomizer</title>
             </Helmet>
-            <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {Atomizer.map((product, index) => (
-                    <ProductCard key={index} {...product} />
-                ))}
-            </div>
+            <Container>
+                <div className="mt-20 mb-20 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {Atomizer.map((product, index) => (
+                        <ProductCard key={index} {...product} />
+                    ))}
+                </div>
+            </Container>
         </div>
     )
 }
