@@ -6,6 +6,7 @@ import {
     increaseQuantity,
     decreaseQuantity,
 } from '../Store/cartSlice';
+import Container from '../golobalcomponentes/Containear';
 
 const Cart = () => {
     const cart = useSelector((state) => state.cart);
@@ -28,80 +29,84 @@ const Cart = () => {
     };
 
     return (
-        <div className="container mx-auto p-4">
-            <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
+        <Container>
+            <div className="mt-20 mb-20 px-4">
+                <h1 className="text-3xl font-bold mb-6 text-center sm:text-left">🛒 Your Shopping Cart</h1>
 
-            {cart.totalQuantity === 0 ? (
-                <p className="text-center text-gray-500">Your cart is empty</p>
-            ) : (
-                <>
-                    <div className="space-y-4">
-                        {cart.items.map((item) => (
-                            <div
-                                key={item.name}
-                                className="flex flex-col sm:flex-row items-center justify-between border-b pb-4"
-                            >
-                                <div className="flex items-center w-full sm:w-auto mb-4 sm:mb-0">
-                                    <img
-                                        src={item.image}
-                                        alt={item.name}
-                                        className="w-16 h-16 object-cover rounded mr-4"
-                                    />
-                                    <div>
-                                        <h3 className="font-medium">{item.name}</h3>
-                                        <p className="text-sm text-gray-600">{item.price}৳ each</p>
+                {cart.totalQuantity === 0 ? (
+                    <p className="text-center text-gray-500 text-lg">Your cart is empty. Start shopping now!</p>
+                ) : (
+                    <>
+                        <div className="space-y-6">
+                            {cart.items.map((item) => (
+                                <div
+                                    key={item.name}
+                                    className="flex flex-col sm:flex-row items-center justify-between bg-white shadow-md p-4 rounded-lg"
+                                >
+                                    <div className="flex items-center w-full sm:w-auto mb-4 sm:mb-0">
+                                        <img
+                                            src={item.image}
+                                            alt={item.name}
+                                            className="w-20 h-20 object-cover rounded mr-4 border"
+                                        />
+                                        <div>
+                                            <h3 className="font-semibold text-lg">{item.name}</h3>
+                                            <p className="text-sm text-gray-600">{item.price}৳ each</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex items-center gap-3">
+                                        <button
+                                            onClick={() => handleDecrease(item.name)}
+                                            className="w-8 h-8 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold"
+                                        >
+                                            −
+                                        </button>
+                                        <span className="text-md font-medium">{item.quantity}</span>
+                                        <button
+                                            onClick={() => handleIncrease(item.name)}
+                                            className="w-8 h-8 bg-gray-200 hover:bg-gray-300 rounded-full text-lg font-bold"
+                                        >
+                                            +
+                                        </button>
+                                    </div>
+
+                                    <div className="flex flex-col items-center gap-2 mt-3 sm:mt-0">
+                                        <p className="font-medium text-lg">{item.totalPrice}৳</p>
+                                        <button
+                                            onClick={() => handleRemoveItem(item.name)}
+                                            className="text-red-500 hover:underline text-sm"
+                                        >
+                                            Remove
+                                        </button>
                                     </div>
                                 </div>
+                            ))}
+                        </div>
 
-                                <div className="flex items-center gap-2">
-                                    <button
-                                        onClick={() => handleDecrease(item.name)}
-                                        className="px-2 py-1 bg-gray-200 rounded"
-                                    >
-                                        -
-                                    </button>
-                                    <span>{item.quantity}</span>
-                                    <button
-                                        onClick={() => handleIncrease(item.name)}
-                                        className="px-2 py-1 bg-gray-200 rounded"
-                                    >
-                                        +
-                                    </button>
-                                </div>
-
-                                <div className="flex items-center gap-4 mt-2 sm:mt-0">
-                                    <p className="font-medium">{item.totalPrice}৳</p>
-                                    <button
-                                        onClick={() => handleRemoveItem(item.name)}
-                                        className="text-red-500 hover:underline"
-                                    >
-                                        Remove
-                                    </button>
-                                </div>
+                        <div className="mt-8 border-t pt-6">
+                            <div className="flex justify-between text-lg mb-4 font-semibold">
+                                <span>Total:</span>
+                                <span>{cart.totalAmount}৳</span>
                             </div>
-                        ))}
-                    </div>
-
-                    <div className="mt-6 border-t pt-4">
-                        <div className="flex justify-between mb-4">
-                            <span className="font-bold">Total:</span>
-                            <span className="font-bold">{cart.totalAmount}৳</span>
+                            <div className="flex flex-col sm:flex-row justify-between gap-4">
+                                <button
+                                    onClick={handleClearCart}
+                                    className="w-full sm:w-auto px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition"
+                                >
+                                    🧹 Clear Cart
+                                </button>
+                                <button
+                                    className="w-full sm:w-auto px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition"
+                                >
+                                    ✅ Proceed to Checkout
+                                </button>
+                            </div>
                         </div>
-                        <div className="flex justify-between">
-                            <button
-                                onClick={handleClearCart}
-                                className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
-                            >
-                                Clear Cart
-                            </button>
-                            <button className="px-4 py-2 bg-black text-white rounded">
-                                Checkout
-                            </button>
-                        </div>
-                    </div>
-                </>
-            )}
-        </div>
+                    </>
+                )}
+            </div>
+        </Container>
     );
 };
 
