@@ -319,7 +319,7 @@ const Home = () => {
                     <div className="flex-grow border-t border-gray-300 mx-4"></div>
                     <a
                         className="px-4 py-2 text-white text-sm bg-black rounded-full"
-                        href="/category/attar"
+                        href="/attar"
                     >
                         View All
                     </a>
@@ -335,7 +335,7 @@ const Home = () => {
                 < div className="flex items-center px-6 py-4" >
                     <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">panjabi</p>
                     <div className="flex-grow border-t border-gray-300 mx-4"></div>
-                    <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/panjabi">View All</a>
+                    <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/panjabi">View All</a>
                 </div >
                 {/* panjabi__product */}
                 <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -350,7 +350,7 @@ const Home = () => {
                     <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">t-shirt</p>
                     <div className="flex-grow border-t border-gray-300 mx-4">
                     </div>
-                    <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/t-shirt">View All</a>
+                    <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/t-shirt">View All</a>
                 </div >
                 {/* t_shirt_product */}
                 <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -365,7 +365,7 @@ const Home = () => {
                     <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">pant &amp; trouser</p>
                     <div className="flex-grow border-t border-gray-300 mx-4">
                     </div>
-                    <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/pant-trouser">View All</a>
+                    <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/pant-trouser">View All</a>
                 </div >
                 {/* pant_trouser */}
                 <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -379,7 +379,7 @@ const Home = () => {
                 <div className="flex items-center px-6 py-4">
                     <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">natural&nbsp;foods</p>
                     <div className="flex-grow border-t border-gray-300 mx-4"></div>
-                    <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/natural-foods">View All</a>
+                    <a className="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/natural-foods">View All</a>
                 </div>
                 {/* Natural_foods_add_product */}
                 <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -395,7 +395,7 @@ const Home = () => {
                     <p class="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">men's clothing</p>
                     <div class="flex-grow border-t border-gray-300 mx-4">
                     </div>
-                    <a class="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/category/mens-clothing">View All</a>
+                    <a class="px-4 py-2 text-white text-sm bg-secondary rounded-full bg-black" href="/mens-clothing">View All</a>
                 </div>
                 {/* men's_showes_clothing__product */}
                 <div className="px-4 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
