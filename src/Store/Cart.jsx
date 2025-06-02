@@ -75,7 +75,7 @@ const Cart = () => {
                                         <p className="font-medium text-lg">{item.totalPrice}৳</p>
                                         <button
                                             onClick={() => handleRemoveItem(item.name)}
-                                            className="text-red-500 hover:underline text-sm"
+                                            className="text-black bg-white border border-black rounded-md px-4 py-1 text-sm font-medium hover:bg-black hover:text-white transition duration-200 ease-in-out"
                                         >
                                             Remove
                                         </button>
