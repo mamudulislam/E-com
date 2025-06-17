@@ -31,3 +31,4 @@ A modern, responsive e-commerce web application built with **React** and powered
    ```bash
    git clone https://github.com/mamudulislam/E-com.git
    cd E-com
+   yarn dev
