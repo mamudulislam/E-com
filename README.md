@@ -62,7 +62,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 ### Usage
 
-- Access the application at `http://localhost:3000`
+- Access the application at `http://localhost:5173`
 - Register a new user or log in with existing credentials
 - Browse products, add them to your cart, and checkout
 - Use the admin panel to manage products and orders (admin access required)
